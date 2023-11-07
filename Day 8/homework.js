@@ -77,9 +77,9 @@ resto.checkout(240000);
 //Triangle
 
 const triangle1 = (height) => {
-  for (let i = 0; i <= height; i++) {
+  for (let i = 0; i < height; i++) {
     let result = ` `;
-    for (j = 1; j <= i; j++) {
+    for (j = 0; j <= i; j++) {
       result += `*`;
     }
     console.log(result);
