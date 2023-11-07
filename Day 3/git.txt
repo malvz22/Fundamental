@@ -1,0 +1,15 @@
+Git merupakan tempat penyimpanan hasil coding kita (Repository)
+Fungsinya adalah:
+1. Membackup Data (berupa codingan)
+2. Men-transfer Data
+3. Kolaborasi
+4. Tracking History
+
+repo => online (github) & lokal
+
+commit => persetujuan perubahan (local)
+push => mengirimkan hasil commit menuju repo online (github) (sync)
+fetch => cek repo online dan dibandingkan dengan local
+fork => clone repo milik orang lain supaya masuk ke repo kita
+pull request (PR)
+branch
