@@ -24,7 +24,6 @@ class Book extends Product {
 }
 
 class Store {
-  #total = 0;
   #items = [];
   #userCart = [];
 
@@ -41,8 +40,19 @@ class Store {
 
   addToCart(itemname, qty) {
     const findItem = this.#items.find((items) => items.name === itemname);
+    findItem.stock = qty;
     this.#userCart.push(findItem);
     console.log(this.#userCart);
+  }
+
+  checkout() {
+    if (this.#userCart != 0) {
+      console.log("Thank you for shopping!");
+      this.#userCart = [];
+      console.log(this.#userCart);
+    } else {
+      console.log("Your Cart is empty!");
+    }
   }
 }
 
@@ -53,3 +63,5 @@ Tokopedia.uploadItem(
 Tokopedia.uploadItem(new Clothes("Jaket", 23, "Jaket", "Hitam", "L", "Uniqlo"));
 
 Tokopedia.addToCart("KomikNarto", 2);
+
+Tokopedia.checkout();
