@@ -23,6 +23,18 @@ class Biodata {
     this.mobile = mobile;
     this.email = email;
   }
+
+  say() {
+    let date = new Date(this.tanggalLahir);
+    let ageInMs = Date.now() - date.getTime();
+    console.log(ageInMs);
+    let year = Math.floor(ageInMs / 1000 / 60 / 60 / 24 / 30 / 12);
+    this.tanggalLahir = year;
+
+    return console.log(
+      `Halo nama saya ${this.nama}, umur saya ${this.tanggalLahir}, alamat saya di ${this.alamat}, nomor Handphone saya ${this.mobile}, dan email saya ${this.email}`
+    );
+  }
 }
 
 class Dokter extends Biodata {
@@ -40,15 +52,48 @@ class Dokter extends Biodata {
     this.profesi = "Dokter";
     this.pengalaman_kerja = pengalaman_kerja;
   }
-}
 
-const say = (name) => {
-  if (name instanceof Biodata) {
+  say() {
+    let date = new Date(this.tanggalLahir);
+    let ageInMs = Date.now() - date.getTime();
+    console.log(ageInMs);
+    let year = Math.floor(ageInMs / 1000 / 60 / 60 / 24 / 30 / 12);
+    this.tanggalLahir = year;
+
     return console.log(
-      `Halo nama saya ${name.nama}, umur saya ${name.tanggalLahir}, alamat saya di ${name.alamat}, nomor Handphone saya ${name.mobile}, dan email saya ${name.email}`
+      `Halo nama saya ${this.nama}, saya berprofesi sebagai ${this.profesi} dan beroperasi di ${this.alamat_rs}. umur saya ${this.tanggalLahir}, alamat saya di ${this.alamat}, nomor Handphone saya ${this.mobile}, dan email saya ${this.email}`
     );
   }
-};
+}
+
+class Ojol extends Biodata {
+  constructor(
+    nama,
+    tanggalLahir,
+    alamat,
+    mobile,
+    email,
+    kendaraan,
+    plat_nomor
+  ) {
+    super(nama, tanggalLahir, alamat, mobile, email);
+    this.kendaraan = kendaraan;
+    this.profesi = "Ojol";
+    this.plat_nomor = plat_nomor;
+  }
+
+  say() {
+    let date = new Date(this.tanggalLahir);
+    let ageInMs = Date.now() - date.getTime();
+    console.log(ageInMs);
+    let year = Math.floor(ageInMs / 1000 / 60 / 60 / 24 / 30 / 12);
+    this.tanggalLahir = year;
+
+    return console.log(
+      `Halo nama saya ${this.nama}, saya berprofesi sebagai ${this.profesi} dan kendaraan saya adalah ${this.kendaraan}. umur saya ${this.tanggalLahir}, alamat saya di ${this.alamat}, nomor Handphone saya ${this.mobile}, dan email saya ${this.email}`
+    );
+  }
+}
 
 const udin = new Biodata(
   "Udin",
@@ -58,8 +103,48 @@ const udin = new Biodata(
   "udin@mail.com"
 );
 
-const adan = new Dokter("Adan");
+const adan = new Dokter(
+  "Adan",
+  "1998-07-07",
+  "Pamulang",
+  "08161128787",
+  "adan@mail.com",
+  "RS Pondok Indah",
+  7
+);
 
-console.log(udin);
+const idin = new Ojol(
+  "Idin",
+  "1996-07-07",
+  "PIK",
+  "123456789",
+  "idin@jek.com",
+  "Ninja ZX",
+  "B4D"
+);
 
-say(udin);
+udin.say();
+adan.say();
+idin.say();
+
+// const say = (name) => {
+//   if (name instanceof Biodata) {
+//     return console.log(
+//       `Halo nama saya ${name.nama}, umur saya ${name.tanggalLahir}, alamat saya di ${name.alamat}, nomor Handphone saya ${name.mobile}, dan email saya ${name.email}`
+//     );
+//   }
+// };
+
+// const udin = new Biodata(
+//   "Udin",
+//   "1997-04-04",
+//   "BSD",
+//   "081807218539",
+//   "udin@mail.com"
+// );
+
+// const adan = new Dokter("Adan");
+
+// console.log(udin);
+
+// say(udin);
