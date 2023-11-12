@@ -24,6 +24,10 @@ class Biodata {
     this.email = email;
   }
 
+  showData() {
+    return Object.values;
+  }
+
   getClassName() {
     return this.constructor.name;
   }
