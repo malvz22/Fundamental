@@ -27,6 +27,21 @@
 //   };
 // };
 
+// let callCount = 0;
+// const memoizedFn = memoize(function (a, b) {
+//   callCount += 1;
+//   return a + b;
+// });
+
+// const getCallCount = () => {
+//   return callCount;
+// };
+
+// console.log(memoizedFn(2, 2));
+// console.log(memoizedFn(2, 2));
+// console.log(getCallCount());
+// console.log(memoizedFn());
+
 // let fName = "sum";
 // let actions = ["call", "call", "getCallCount", "call", "getCallCount"];
 // let values = [[2, 2], [2, 2], [], [1, 2], []];
@@ -82,7 +97,7 @@
 
 //2. Counter
 
-let n = -2;
+// let n = -2;
 
 // class Counter {
 //   constructor(n) {
@@ -253,3 +268,27 @@ let n = -2;
 // console.log(gen.next().value);
 
 //11. Counter II
+
+// var createCounter = function (init) {
+//   if (init <= -1000 || init >= 1000) return console.log("invalid argument");
+//   else {
+//     let curr = init;
+//     return {
+//       increment: () => ++curr,
+//       decrement: () => --curr,
+//       reset: () => (curr = init),
+//     };
+//   }
+// };
+
+// const counter = new createCounter(10);
+
+// console.log(counter.increment());
+// console.log(counter.reset());
+// console.log(counter.decrement());
+
+//12. Chunk Array
+
+var chunk = function (arr, size) {
+  let result = [];
+};
