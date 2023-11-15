@@ -289,6 +289,94 @@
 
 //12. Chunk Array
 
-var chunk = function (arr, size) {
-  let result = [];
+// var chunk = function (arr, size) {
+//   let result = [];
+//   while (arr.length) {
+//     result.push(arr.splice(0, size));
+//   }
+//   return result;
+// };
+
+// console.log(chunk([1, 9, 6, 3, 2], 3));
+
+//13. Array Wrapper
+
+// var ArrayWrapper = function (nums) {
+//   this.nums = nums;
+// };
+
+// /**
+//  * @return {number}
+//  */
+// ArrayWrapper.prototype.valueOf = function () {
+//   return this.nums.reduce((sum, num) => (sum += num), 0);
+// };
+
+// /**
+//  * @return {string}
+//  */
+// ArrayWrapper.prototype.toString = function () {
+//   return `[${this.nums.join(`,`)}]`;
+// };
+
+// const obj1 = new ArrayWrapper([1, 2]);
+// const obj2 = new ArrayWrapper([3, 4]);
+
+// //14. Hello world function
+
+// var createHelloWorld = function () {
+//   return function (...args) {
+//     while (args) return "Hello World";
+//   };
+// };
+
+// const f = createHelloWorld();
+
+// console.log(f([{}, null, 42]));
+
+//15. To be or not to be
+
+//Function called "Expect"
+//Returns two functions: toBe(value) accepts
+
+// var expect = function (val) {
+//   var toBe = (va) => {
+//     if (val === va) return true;
+//     else return false;
+//   };
+
+//   var notToBe = (va) => {
+//     if (val !== va) return true;
+//     else throw new Error("Equal");
+//   };
+
+//   return {
+//     toBe,
+//     notToBe,
+//   };
+// };
+
+// console.log(expect(5).notToBe(5));
+
+//17. Join Two Arrayss by ID
+
+var join = function (arr1, arr2) {
+  let result = {};
+  arr1.forEach((val) => (result[val.id] = val));
+  arr2.forEach((val) => {
+    if (result[val.id]) {
+      Object.keys(val).forEach((key) => {
+        result[val.id][key] = val[key];
+      });
+    } else result[val.id] = val;
+  });
+  return Object.values(result);
 };
+
+let arr1 = [
+    { id: 1, x: 1 },
+    { id: 2, x: 9 },
+  ],
+  arr2 = [{ id: 3, x: 5 }];
+
+console.log(join(arr1, arr2));
