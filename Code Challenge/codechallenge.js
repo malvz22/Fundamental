@@ -40,7 +40,6 @@
 // console.log(memoizedFn(2, 2));
 // console.log(memoizedFn(2, 2));
 // console.log(getCallCount());
-// console.log(memoizedFn());
 
 // let fName = "sum";
 // let actions = ["call", "call", "getCallCount", "call", "getCallCount"];
@@ -342,7 +341,7 @@
 // var expect = function (val) {
 //   var toBe = (va) => {
 //     if (val === va) return true;
-//     else return false;
+//     else throw new Error("Not Equal");
 //   };
 
 //   var notToBe = (va) => {
@@ -360,23 +359,23 @@
 
 //17. Join Two Arrayss by ID
 
-var join = function (arr1, arr2) {
-  let result = {};
-  arr1.forEach((val) => (result[val.id] = val));
-  arr2.forEach((val) => {
-    if (result[val.id]) {
-      Object.keys(val).forEach((key) => {
-        result[val.id][key] = val[key];
-      });
-    } else result[val.id] = val;
-  });
-  return Object.values(result);
-};
+// var join = function (arr1, arr2) {
+//   let result = {};
+//   arr1.forEach((val) => (result[val.id] = val));
+//   arr2.forEach((val) => {
+//     if (result[val.id]) {
+//       Object.keys(val).forEach((key) => {
+//         result[val.id][key] = val[key];
+//       });
+//     } else result[val.id] = val;
+//   });
+//   return Object.values(result);
+// };
 
-let arr1 = [
-    { id: 1, x: 1 },
-    { id: 2, x: 9 },
-  ],
-  arr2 = [{ id: 3, x: 5 }];
+// let arr1 = [
+//     { id: 1, x: 1 },
+//     { id: 2, x: 9 },
+//   ],
+//   arr2 = [{ id: 3, x: 5 }];
 
-console.log(join(arr1, arr2));
+// console.log(join(arr1, arr2));
